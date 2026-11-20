@@ -1,0 +1,8 @@
+# PyTorch avec CUDA s'installe à part (voir README.md), par exemple torch==2.9.0 pour CUDA 13.0.
+transformers==5.5.3
+accelerate==1.13.0
+gradio==6.32.0
+huggingface-hub==1.33.0
+pillow==11.3.0
+safetensors==0.7.0
+tokenizers==0.22.2

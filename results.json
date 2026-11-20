@@ -1,0 +1,138 @@
+{
+  "model": "llava-hf/llava-1.5-7b-hf",
+  "photo": "COCO 53236",
+  "score": [
+    11,
+    13
+  ],
+  "rows": [
+    {
+      "cat": "VQA",
+      "q": "What type of table is the food on?",
+      "expected": "une table en bois",
+      "answer": "The food is on a wooden table.",
+      "correct": true
+    },
+    {
+      "cat": "VQA",
+      "q": "What fruit is in the bowl on the left?",
+      "expected": "du raisin",
+      "answer": "There is a bowl of grapes on the left.",
+      "correct": true
+    },
+    {
+      "cat": "VQA",
+      "q": "What color is the flower?",
+      "expected": "jaune",
+      "answer": "The flower is yellow.",
+      "correct": true
+    },
+    {
+      "cat": "VQA",
+      "q": "What food is on the rectangular plate on the right?",
+      "expected": "des croissants",
+      "answer": "There are croissants on the rectangular plate on the right.",
+      "correct": true
+    },
+    {
+      "cat": "VQA",
+      "q": "What is on top of the cake pieces?",
+      "expected": "des fraises",
+      "answer": "The cake pieces are topped with strawberries.",
+      "correct": true
+    },
+    {
+      "cat": "VQA",
+      "q": "How many pieces of cake are on the blue plate? Answer with a number.",
+      "expected": "6",
+      "answer": "There are three pieces of cake on the blue plate.",
+      "correct": false
+    },
+    {
+      "cat": "Oui / non",
+      "q": "Is there a cup on the table? Answer yes or no.",
+      "expected": "oui",
+      "answer": "Yes",
+      "correct": true
+    },
+    {
+      "cat": "Oui / non",
+      "q": "Is there a bottle of Coca-Cola on the table? Answer yes or no.",
+      "expected": "non",
+      "answer": "No",
+      "correct": true
+    },
+    {
+      "cat": "Oui / non",
+      "q": "Is there a dog in the image? Answer yes or no.",
+      "expected": "non",
+      "answer": "No",
+      "correct": true
+    },
+    {
+      "cat": "Oui / non",
+      "q": "Is there a laptop on the table? Answer yes or no.",
+      "expected": "non",
+      "answer": "No",
+      "correct": true
+    },
+    {
+      "cat": "Raisonnement",
+      "q": "What meal is this table most likely set for?",
+      "expected": "petit-déjeuner ou brunch",
+      "answer": "The table is most likely set for a breakfast meal, as it is filled with various breakfast foods such as croissants, fruit, and cheese. The presence of a wine glass and a cup also suggests that there might be a beverage to accompany the meal. The table is well-prepared and ready for guests to enjoy their breakfast.",
+      "correct": true
+    },
+    {
+      "cat": "Raisonnement",
+      "q": "Which object on the table is used to make coffee?",
+      "expected": "la cafetière italienne",
+      "answer": "A coffee maker is used to make coffee on the table.",
+      "correct": true
+    },
+    {
+      "cat": "Détail fin",
+      "q": "What brand is the coffee maker?",
+      "expected": "illisible sur la photo",
+      "answer": "The coffee maker is a Keurig.",
+      "correct": false
+    }
+  ],
+  "variants": [
+    {
+      "cat": "Question orientée",
+      "q": "Is there a Coca-Cola on the table?",
+      "answer": "No, there is no Coca-Cola on the table. The table is filled with various foods and drinks, including a wine glass, a cup, and a bowl of fruit."
+    },
+    {
+      "cat": "Question orientée",
+      "q": "How many cans of Coca-Cola are on the table?",
+      "answer": "There are two cans of Coca-Cola on the table."
+    },
+    {
+      "cat": "Question orientée",
+      "q": "What is the dog eating?",
+      "answer": "The dog is eating a plate of food, which includes a variety of items such as fruit, cheese, and pastries."
+    },
+    {
+      "cat": "Format",
+      "q": "Describe the image in one sentence.",
+      "answer": "A table with a variety of foods, including fruit, cheese, and pastries, is set for a gathering."
+    },
+    {
+      "cat": "Format",
+      "q": "Answer with a single word: what fruit is in the bowl?",
+      "answer": "Grapes"
+    },
+    {
+      "cat": "Langue",
+      "q": "Décris l'image en une phrase.",
+      "answer": "A table with a variety of foods, including fruit, cheese, and pastries."
+    },
+    {
+      "cat": "Langue",
+      "q": "Quel fruit y a-t-il dans le bol ?",
+      "answer": "Le bol contient des raisins."
+    }
+  ]
+}
