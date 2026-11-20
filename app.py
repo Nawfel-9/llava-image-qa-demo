@@ -26,7 +26,7 @@ llava = LLaVA()
 
 # Couleurs : une couleur par concept (image en bleu, projection en orange, texte en vert, réponse en violet)
 CSS = """
-:root, .dark { --bg:#F7F6F2; --panel:#ECEAE4; --line:#DDDAD2; --rule:#7D8593; --ink:#16181D; --ink2:#4A505C;
+:root { --bg:#F7F6F2; --panel:#ECEAE4; --line:#DDDAD2; --rule:#7D8593; --ink:#16181D; --ink2:#4A505C;
   --vision:#1F5FD1; --proj:#E8590C; --text:#2B8A3E; --answer:#9C36B5; --error:#C92A2A; }
 html, body, gradio-app, .main, .wrap, .contain, .gradio-container { background: var(--bg) !important; }
 .gradio-container { max-width: none !important; padding: 24px 40px !important; color: var(--ink);
@@ -78,13 +78,13 @@ button[role="tab"] { font-size: 20px !important; font-weight: 600 !important; }
 #code .cm-content { filter: brightness(0.62) saturate(1.4); font-weight: 500; }
 """
 
-# L'interface est conçue pour le thème clair : on l'impose au chargement de la page.
-FORCE_LIGHT = """() => {
-  const url = new URL(window.location);
-  if (url.searchParams.get('__theme') !== 'light') {
-    url.searchParams.set('__theme', 'light');
-    window.location.replace(url.href);
-  }
+# Thème clair uniquement : Gradio active le mode sombre en ajoutant la classe « dark » ;
+# on la retire au chargement et on empêche qu'elle revienne.
+LIGHT_ONLY = """() => {
+  const strip = () => [document.documentElement, document.body].forEach((el) => el.classList.remove('dark'));
+  strip();
+  new MutationObserver(strip).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  new MutationObserver(strip).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 }"""
 
 
@@ -177,4 +177,4 @@ with gr.Blocks(title="Démonstration LLaVA") as demo:
             gr.Code(CODE, language="python", elem_id="code")
 
 if __name__ == "__main__":
-    demo.queue().launch(server_name="127.0.0.1", server_port=7860, css=CSS, js=FORCE_LIGHT, theme=gr.themes.Base())
+    demo.queue().launch(server_name="127.0.0.1", server_port=7860, css=CSS, js=LIGHT_ONLY, theme=gr.themes.Base())
